@@ -12,7 +12,8 @@ class StaffController extends Controller
      */
     public function index()
     {
-        //
+        $staffs = Staff::all();
+        return view('backend.staffs.index', compact('staffs'));
     }
 
     /**
@@ -36,7 +37,9 @@ class StaffController extends Controller
      */
     public function show(Staff $staff)
     {
-        //
+        $subjects = $staff->subjects;
+        $classes = $staff->classes;
+        return view('staffs.show',compact('staff','subjects','classes'));
     }
 
     /**

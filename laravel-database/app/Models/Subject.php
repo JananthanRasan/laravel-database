@@ -8,7 +8,7 @@ class Subject extends Model
 {
     protected $table = 'subject';
 
-    public function class_names(){
+    public function classes(){
         return $this->belongsToMany(Class_Name::class,'subject_class', 'subject_id', 'class_id');
     }
     public function teachers(){

@@ -12,7 +12,8 @@ class ClassNameController extends Controller
      */
     public function index()
     {
-        //
+        $classes = Class_Name::all();
+        return view('backend.classes.index', compact('classes'));
     }
 
     /**
@@ -34,15 +35,18 @@ class ClassNameController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Class_Name $class_Name)
+    public function show(Class_Name $class)
     {
-        //
+        $students = $class->students;
+        $subjects = $class->subjects;
+        $teachers = $class->teachers;
+        return view('classes.show',compact('class','students','subjects','teachers'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Class_Name $class_Name)
+    public function edit(Class_Name $class)
     {
         //
     }
