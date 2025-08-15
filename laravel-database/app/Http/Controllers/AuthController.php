@@ -48,6 +48,17 @@ class AuthController extends Controller
     }
 
     public function dashboard(){
-        return view('dashboard');
+        if(Auth::check()){
+            return redirect()->route('students.index');
+        }
+
+        return redirect()->route('login');
+    }
+
+    public function logout(Request $request){
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect()->route('login')->with('success', 'You have been logged out successfully.');
     }
 }

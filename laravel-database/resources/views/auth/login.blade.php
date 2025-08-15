@@ -29,7 +29,7 @@
                     </tr>
                     <tr>
                         <td><label for="password" class="col-form-label mb-2">Password</label></td>
-                        <td><input type="text" name="password" id="password" class="form-control mb-2" required autocomplete="password" autofocus></td>
+                        <td><input type="password" name="password" id="password" class="form-control mb-2" required autocomplete="password" autofocus></td>
                     </tr>
                     <tr>
                         <td>
