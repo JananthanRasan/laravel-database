@@ -12,9 +12,9 @@ Route::get('/', function () {
 });
 
 Route::resource('students', StudentController::class)->middleware('auth');
-Route::resource('subjects', SubjectController::class);
-Route::resource('staffs', StaffController::class);
-Route::resource('classes', ClassNameController::class);
+Route::resource('subjects', SubjectController::class)->middleware('auth');
+Route::resource('staffs', StaffController::class)->middleware('auth');
+Route::resource('classes', ClassNameController::class)->middleware('auth');
 
 Route::resource('login', AuthController::class);
 
